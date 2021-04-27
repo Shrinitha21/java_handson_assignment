@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript function to find a word within a string</title>
+</head>
+<body>
+  <button onclick="search_word()"></button>
+
+	<script >
+        var x = 0, y=0,i=0;
+ document.write(search_word('The quick brown fox', 'fox'));
+document.write (search_word('bb, cc, dd','aa'));
+function search_word(text, word){
+    
+   
+   
+    for (i=0;i< text.length;i++)
+        {
+        if(text[i] == word[0])
+            {
+            for(j=i;j<i+word.length;j++)
+               {
+                if(text[j]==word[j-i])
+                  {
+                    y++;
+                  }
+                if (y==word.length){
+                    x++;
+                }
+            }
+            y=0;
+        }
+    }
+   return "'"+word+"' was found "+x+" times.";
+}
+
+
+    </script>
+
+</body>
+</html>

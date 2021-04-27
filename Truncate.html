@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS truncates a string</title>
+</head>
+<body >
+	 <button onclick="truncate()"></button>
+	<script>
+		document.write(truncate('We are doing JS string exercises.'))
+document.write(truncate('We are doing JS string exercises.',19))
+document.write(truncate('We are doing JS string exercises.',15,'!!'))
+
+	function truncate(str, length, ending) {
+    if (length == null) {
+      length = 100;
+    }
+    if (ending == null) {
+      ending = '...';
+    }
+    if (str.length > length) {
+      return str.substring(0, length - ending.length) + ending;
+    } else {
+      return str;
+    }
+  }
+
+	</script>
+</body>
+</html>
